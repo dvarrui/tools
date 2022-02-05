@@ -1,24 +1,24 @@
 
-# RubyZen
+# ZenRuby
 
-Display Ruby ZEN rules.
+Muestra las reglas del ZEN de Ruby.
 
 ![logo](./docs/images/logo.png)
 
-## Installation
+## Instalación
 
-1. Install Ruby on your system.
-1. Install gem: `gem install ruby-zen`.
+1. Instalar Ruby en tu sistema.
+1. Instalar la gema: `gem install ruby-zen`.
 
-## Use
+## Forma de uso
 
-Run `rubyzen` command on your terminal
+Ejecuta el comando `zenrub` en ti terminal.
 
-| Function | Description |
-| -------- | ------------------------- |
-| version  | Show currente version |
-| langs    | Show available languages |
-| show     | Show Ruby ZEN rules |
+| Función | Descripción |
+| ------- | ------------------------- |
+| version | Muestra la versión del comando |
+| langs   | Muestra los lenguajes disponibles |
+| show    | Muestra las reglas del ZEN de Ruby |
 
 ## Contact
 

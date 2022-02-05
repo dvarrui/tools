@@ -13,3 +13,8 @@ desc 'Rake help'
 task :help do
   system('rake -T')
 end
+
+desc 'Clean temp files'
+task :celan do
+  system('rm #{}')
+end
