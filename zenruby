@@ -1,0 +1,5 @@
+#!/usr/bin/env ruby
+
+require 'ruby-zen/cli'
+
+CLI.start(ARGV)
