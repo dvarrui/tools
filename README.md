@@ -1,7 +1,7 @@
 
 # ZenRuby
 
-Muestra las reglas del ZEN de Ruby.
+Muestra las reglas del ZEN de Ruby. `zen-ruby` es un wrapper en español de la gema ruby-zen.
 
 ![logo](./docs/images/logo.png)
 
