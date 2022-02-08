@@ -12,7 +12,7 @@ Muestra las reglas del ZEN de Ruby. `zen-ruby` es un wrapper en español de la g
 
 ## Forma de uso
 
-Ejecuta el comando `zenrub` en ti terminal.
+Ejecuta el comando `zenrub` en tu terminal.
 
 | Función | Descripción |
 | ------- | ------------------------- |
