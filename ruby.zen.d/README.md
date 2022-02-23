@@ -20,6 +20,8 @@ Run `rubyzen` command on your terminal
 | version  | Show currente version |
 | langs    | Show available languages |
 | show     | Show Ruby ZEN rules |
+| show --more | Show every rule with detailed explanation |
+| show --more --step | Show every rule with detailed explanation, step by step |
 
 ## Contact
 
