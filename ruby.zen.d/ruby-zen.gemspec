@@ -16,7 +16,7 @@ Gem::Specification.new do |s|
   s.license     = 'GPL-3.0'
   s.authors     = ['David Vargas Ruiz']
   s.email       = 'dvarrui@protonmail.com'
-  s.homepage    = 'https://github.com/dvarrui/ruby-zen/tree/master'
+  s.homepage    = Params::HOMEPAGE
 
   s.executables << Params::NAME
   s.files       = Dir.glob(File.join('lib', '**', '*.*'))
