@@ -19,6 +19,8 @@ Ejecuta el comando `zenrub` en tu terminal.
 | version | Muestra la versión del comando |
 | langs   | Muestra los lenguajes disponibles |
 | show    | Muestra las reglas del ZEN de Ruby |
+| show --more | Muestra cada regla con su explicación completa |
+| show --more --step | Muestra cada regla con su explicación completa, pero paso a paso |
 
 ## Contact
 
