@@ -1,0 +1,6 @@
+private*
+.yardoc/*
+html
+*.gem
+*.html
+

@@ -1,0 +1,5 @@
+gem colorize
+gem thor
+gem yaml
+gem minitest
+gem pry-byebug
