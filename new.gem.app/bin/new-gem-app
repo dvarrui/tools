@@ -1,0 +1,5 @@
+#!/usr/bin/env ruby
+
+require 'lib/new-gem-app/cli'
+
+CLI.start(ARGV)

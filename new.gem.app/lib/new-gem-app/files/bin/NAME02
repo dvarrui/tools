@@ -1,0 +1,5 @@
+#!/usr/bin/env ruby
+
+require 'NAME01/cli'
+
+CLI.start(ARGV)
