@@ -2,3 +2,5 @@ private*
 priv*
 *.gem
 *.log
+html
+.yardoc
