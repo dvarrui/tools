@@ -21,7 +21,7 @@ Gem::Specification.new do |s|
   s.executables << Version::NAME
   s.files       = Dir.glob(File.join('lib', '**', '*.*'))
 
-  s.required_ruby_version = '>= 3.0.0'
+  s.required_ruby_version = '>= 2.5.0'
 
   s.add_runtime_dependency 'colorize', '~> 0.8.1'
   s.add_runtime_dependency 'thor', '~> 1.1'
