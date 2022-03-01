@@ -1,6 +1,6 @@
 
-require_relative 'markdown/markdown/link'
-require_relative 'markdown/version'
+require_relative 'tool-markdown/markdown/link'
+require_relative 'tool-markdown/version'
 
 class Markdown
   def self.link(dirname, options)

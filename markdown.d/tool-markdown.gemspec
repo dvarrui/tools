@@ -1,5 +1,5 @@
 require 'date'
-require_relative 'lib/markdown/version'
+require_relative 'lib/tool-markdown/version'
 
 Gem::Specification.new do |s|
   s.name        = Version::GEMNAME

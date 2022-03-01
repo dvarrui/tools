@@ -1,5 +1,5 @@
 #!/usr/bin/env ruby
 
-require_relative 'lib/markdown/cli'
+require_relative 'lib/tool-markdown/cli'
 
 CLI.start(ARGV)

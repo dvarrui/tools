@@ -1,7 +1,7 @@
 
 require 'thor'
 require_relative 'version'
-require_relative '../markdown'
+require_relative '../tool-markdown'
 
 ##
 # Command Line User Interface
