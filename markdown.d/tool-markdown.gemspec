@@ -2,7 +2,7 @@ require 'date'
 require_relative 'lib/markdown/version'
 
 Gem::Specification.new do |s|
-  s.name        = Version::NAME
+  s.name        = Version::GEMNAME
   s.version     = Version::VERSION
   s.date        = Date.today.strftime("%Y-%m-%d")
   s.summary     = "Detect broken links into Markdown files"
