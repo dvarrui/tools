@@ -5,7 +5,7 @@
 module Utils
   def self.packages
     p = %w[thor colorize]
-    p += %w[minitest yard rubocop]
+    p += %w[minitest yard]
     p
   end
 
