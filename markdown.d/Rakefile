@@ -1,7 +1,7 @@
 # File: Rakefile
 # Usage: rake
 
-require_relative '../lib/markdown/version'
+require_relative 'lib/markdown/version'
 require_relative 'tasks/install'
 require_relative 'tasks/build'
 require_relative 'tasks/push'
