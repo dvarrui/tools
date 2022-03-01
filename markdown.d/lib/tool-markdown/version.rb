@@ -3,7 +3,7 @@
 module Version
   AUTHOR = 'dvarrui'
   MAJOR_NUMBER = '0.0'
-  VERSION = "#{MAJOR_NUMBER}.4"
+  VERSION = "#{MAJOR_NUMBER}.5"
   NAME = 'markdown'
   GEMNAME = 'tool-markdown'
   DOCKERNAME = "#{AUTHOR}/tool-markdown"
