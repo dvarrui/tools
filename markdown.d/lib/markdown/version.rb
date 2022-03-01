@@ -7,5 +7,5 @@ module Version
   NAME = 'markdown'
   GEMNAME = 'tool-markdown'
   DOCKERNAME = "#{AUTHOR}/tool-markdown"
-  HOMEPAGE = "https://github.com/dvarrui/tools/markdown.d#README.md"
+  HOMEPAGE = "https://github.com/dvarrui/tools/markdown.d/README.md"
 end
