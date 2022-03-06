@@ -1,0 +1,19 @@
+# File: Rakefile
+# Usage: rake
+
+require_relative 'lib/tool-compiler/version'
+require_relative 'tasks/install'
+require_relative 'tasks/build'
+require_relative 'tasks/push'
+
+# Define tasks
+desc 'Default action => check & build'
+task :default do
+  puts "[INFO] #{Version::NAME} (#{Version::GEMNAME})"
+  Rake::Task['install:check'].invoke
+end
+
+desc 'Show rake help'
+task :help do
+  system('rake -T')
+end
