@@ -1,12 +1,10 @@
 
-require 'colorize'
 require_relative 'debug'
-require_relative 'read'
 
 class FromPython
   def self.to_ruby(filename)
-    puts "[ From Python => to Ruby ] Filename: #{filename}...".cyan
-    content = File.read(filename).split("\n")
-    puts content.white
+    Debug.puts "[ From Python => to Ruby ] Filename: #{filename}...", :cyan
+    lines = File.read(filename).split("\n")
+    Debug.puts_array lines
   end
 end
