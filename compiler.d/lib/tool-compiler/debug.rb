@@ -8,7 +8,7 @@ class Debug
 
   def self.puts_array(lines)
     lines.each_with_index do |line, index|
-      pindex = "%02d" % index
+      pindex = "%02d" % (index + 1)
       puts " #{pindex} | #{line}".white
     end
   end
