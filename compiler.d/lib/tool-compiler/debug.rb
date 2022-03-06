@@ -2,14 +2,14 @@
 require 'colorize'
 
 class Debug
-  def self.puts(text, color=:yellow)
+  def self.puts(text, color=:default)
     STDOUT.puts text.send(color)
   end
 
-  def self.puts_array(lines)
+  def self.puts_array(lines, color=:white)
     lines.each_with_index do |line, index|
       pindex = "%02d" % (index + 1)
-      puts " #{pindex} | #{line}".white
+      STDOUT.puts " #{pindex} | #{line}".send color
     end
   end
 
