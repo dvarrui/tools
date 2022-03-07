@@ -3,11 +3,11 @@ require 'colorize'
 
 class Print
   def self.table(panel)
-    table = format(panel)
-    puts colorize(table, panel)
+    table = create_table_from(panel)
+    puts colorize_table(table, panel)
   end
 
-  def self.format(panel)
+  def self.create_table_from(panel)
     output = []
     panel.data.each { |row| output << pretty_row(row) }
     output
@@ -23,7 +23,7 @@ class Print
     output
   end
 
-  def self.colorize(table, panel)
+  def self.colorize_table(table, panel)
     output = []
     max = table.size - 1
     for y in 0..max
