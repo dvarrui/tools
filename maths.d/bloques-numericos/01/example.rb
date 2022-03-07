@@ -3,6 +3,7 @@
 require_relative 'panel'
 require_relative 'pretty'
 
-panel = Panel.new(4)
+puts "[PASO 1] Crear el panel de 4x4."
 
+panel = Panel.new(4)
 Pretty.print panel
