@@ -14,7 +14,7 @@ class Panel
   end
 
   def random_fill
-    max = @size - 2
+    max = 2
     for y in (0..max)
       for x in (0..max)
         # Número aleatorio entre 1 y 9
