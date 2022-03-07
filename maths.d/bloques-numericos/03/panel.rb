@@ -26,6 +26,7 @@ class Panel
   def calculate_sum
     calculate_rows_sum
     calculate_cols_sum
+    calculate_diagonal_sum
   end
 
   private
@@ -45,5 +46,13 @@ class Panel
       end
       @data[3][x] = numbers.sum
     end
+  end
+
+  def calculate_diagonal_sum
+    numbers = []
+    for xy in 0..2
+      numbers << @data[xy][xy]
+    end
+    @data[3][3] = numbers.sum
   end
 end
