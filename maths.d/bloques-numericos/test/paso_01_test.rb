@@ -6,7 +6,7 @@ require_relative '../01/panel'
 class Paso01 < Minitest::Test
 
   def setup
-    @panel1 = Panel.new(4)
+    @panel1 = Panel.new
   end
 
   def test_panel_new_4
