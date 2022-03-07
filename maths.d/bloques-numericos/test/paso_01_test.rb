@@ -24,4 +24,9 @@ class Paso01 < Minitest::Test
     text = "[[0, 0, 0, 0], [0, 0, 0, 0], [0, 0, 0, 0], [0, 0, 0, 0]]"
     assert_equal text, panel.to_s
   end
+
+  def text_example
+    ok = system("../01/example.rb")
+    assert_equal true, ok
+  end
 end
