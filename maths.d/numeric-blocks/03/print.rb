@@ -35,7 +35,7 @@ class Print
         elsif panel.getxy_static(x,y)
           col = value.cyan
         else
-          col = value.red_ligth
+          col = value.light_yellow
         end
         row += col
       end
