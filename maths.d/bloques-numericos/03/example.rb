@@ -3,7 +3,7 @@
 require_relative 'panel'
 require_relative 'pretty'
 
-puts "[PASO 2] Rellenar la sección de 3x3 con valores del 1 al 9."
+puts "[PASO 3] Calcular las sumas de filas, columnas y diagonal."
 
 panel = Panel.new
 panel.random_fill
