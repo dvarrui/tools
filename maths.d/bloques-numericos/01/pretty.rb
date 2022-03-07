@@ -20,9 +20,6 @@ class Pretty
   end
 
   def self.pretty_col(col)
-    text = " %2d" % col
-    return text.white if col.zero?
-    text.cyan
+    " %2d" % col
   end
-
 end
