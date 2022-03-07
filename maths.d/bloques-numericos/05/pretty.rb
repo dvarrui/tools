@@ -21,9 +21,9 @@ class Pretty
 
   def self.pretty_col(col)
     text = " %2d" % col
-    return text.white if col.zero?
-    return text.light_red if col < 10
-    return text.cyan
+    #return text.white if col.zero?
+    #return text.light_red if col < 10
+    #return text.cyan
   end
 
 end
