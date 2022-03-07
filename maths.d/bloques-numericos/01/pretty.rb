@@ -1,9 +1,9 @@
 
 require 'colorize'
 
-class Print
+class Pretty
 
-  def self.table(panel)
+  def self.print(panel)
     puts format(panel)
   end
 
