@@ -8,7 +8,7 @@ class Panel
     row = Array.new(@size, 0)
     @data = Array.new(@size, row)
 
-    row = Array.new(@size, false)
+    row = Array.new(@size, true)
     @static = Array.new(@size, row)
   end
 
