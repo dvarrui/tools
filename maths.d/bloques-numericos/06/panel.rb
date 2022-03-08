@@ -2,11 +2,14 @@
 
 class Panel
   attr_reader :data
+  attr_reader :diagonal_ws2en
 
   def initialize
     @size = 4
     @data = []
     @size.times { @data <<= Array.new(@size, 0) }
+    # Diagonal sum West-South to East-North
+    @diagonal_ws2en = 0
   end
 
   def to_s
@@ -27,6 +30,7 @@ class Panel
     calculate_rows_sum
     calculate_cols_sum
     calculate_diagonal_sum
+    calculate_diagonal_sum_ws2en
   end
 
   def put_holes
@@ -66,5 +70,14 @@ class Panel
       numbers << @data[xy][xy]
     end
     @data[3][3] = numbers.sum
+  end
+
+  def calculate_diagonal_sum_ws2en
+    numbers = []
+    for y in 0..2
+      x = 2 - y
+      numbers << @data[y][x]
+    end
+    @diagonal_ws2en = numbers.sum
   end
 end
