@@ -25,8 +25,9 @@ class Paso01 < Minitest::Test
     assert_equal text, panel.to_s
   end
 
-  def text_example
+  def test_example01
     ok = system("../01/example.rb")
-    assert_equal true, ok
+    code = $?.exitstatus
+    assert_equal 0, code
   end
 end

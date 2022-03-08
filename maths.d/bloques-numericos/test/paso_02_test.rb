@@ -3,9 +3,9 @@
 require 'minitest/autorun'
 
 class Paso02 < Minitest::Test
-
-  def text_example
+  def test_example02
+    puts File.basename(__FILE__)
     ok = system("../02/example.rb")
-    assert_equal true, ok
+    assert_equal 0, $?.exitstatus
   end
 end
