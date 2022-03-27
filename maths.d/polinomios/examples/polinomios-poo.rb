@@ -1,7 +1,7 @@
 #!/usr/bin/env ruby
 
-require_relative 'lib/poo/monomio'
-require_relative 'lib/poo/polinomio'
+require_relative '../lib/poo/monomio'
+require_relative '../lib/poo/polinomio'
 
 m = Monomio.new(4,3)
 

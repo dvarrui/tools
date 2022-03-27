@@ -1,7 +1,7 @@
 #!/usr/bin/env ruby
 
-require_relative 'lib/func.1/monomio'
-require_relative 'lib/func.1/polinomio'
+require_relative '../lib/func.1/monomio'
+require_relative '../lib/func.1/polinomio'
 
 def monomios
   puts "[info] Monomios"

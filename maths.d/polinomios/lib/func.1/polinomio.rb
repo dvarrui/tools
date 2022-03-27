@@ -82,6 +82,10 @@ class Polinomio
     STDOUT.puts polinomio.to_s
   end
 
+  def self.puts_a_to_s(polinomio)
+    STDOUT.puts(array_to_s(polinomio))
+  end
+
   def self.puts_h_to_s(polinomio)
     STDOUT.puts(array_to_s(hash_to_a(polinomio)))
   end
