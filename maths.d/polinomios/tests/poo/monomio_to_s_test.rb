@@ -1,9 +1,9 @@
 #!/usr/bin/env ruby
 
-require 'minitest/autorun'
+require 'test/unit'
 require_relative '../../lib/poo/monomio'
 
-class PooMonomioTosTest < Minitest::Test
+class PooMonomioTosTest < Test::Unit::TestCase
 
   def setup
     @m = []

@@ -1,9 +1,9 @@
 #!/usr/bin/env ruby
 
-require 'minitest/autorun'
-require_relative '../../lib/poo/polinomio'
+require 'test/unit'
+require_relative '../../lib/poo/monomio'
 
-class PooPoliomioTest < Minitest::Test
+class PooPoliomioTest < Test::Unit::TestCase
 
   def setup
     @p = []

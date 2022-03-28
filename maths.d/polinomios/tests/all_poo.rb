@@ -1,7 +1,5 @@
 #!/usr/bin/env ruby
 
-require 'minitest/autorun'
-
 require_relative 'poo/monomio_array_test'
 require_relative 'poo/monomio_hash_test'
 require_relative 'poo/monomio_to_s_test'
