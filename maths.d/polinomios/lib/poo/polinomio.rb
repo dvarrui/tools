@@ -11,7 +11,6 @@ class Polinomio
   def to_h
     result = {}
     @monomios.each_pair { |key,monomio| result[key]=monomio.value }
-    #require 'pry-byebug'; binding.pry
     result
   end
 
