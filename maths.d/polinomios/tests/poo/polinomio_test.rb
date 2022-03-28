@@ -1,11 +1,11 @@
 #!/usr/bin/env ruby
 
 require 'minitest/autorun'
-require_relative '../lib/math/polinomio'
+require_relative '../../lib/poo/polinomio'
 
-class PoliomioTest < Minitest::Test
+class PooPoliomioTest < Minitest::Test
+
   def setup
-
     @p = []
     @p << Polinomio.new( [ Monomio.new(5, 3), Monomio.new(-3, 0) ])
     @p << Polinomio.new( [ Monomio.new(6, 2), Monomio.new(-2, 1) ])

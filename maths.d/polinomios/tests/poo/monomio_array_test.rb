@@ -1,9 +1,10 @@
 #!/usr/bin/env ruby
 
 require 'minitest/autorun'
-require_relative '../lib/math/monomio'
+require_relative '../../lib/poo/monomio'
 
-class MonomioArrayTest < Minitest::Test
+class PooMonomioArrayTest < Minitest::Test
+
   def setup
     @m = []
     @m << [ Monomio.new(5, 0), Monomio.new(-3, 0), Monomio.new(0, 0) ]
