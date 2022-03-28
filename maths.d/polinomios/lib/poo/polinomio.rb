@@ -14,6 +14,16 @@ class Polinomio
     result
   end
 
+  def to_a
+    result = []
+    max = @monomios.keys.sort.last
+    (max..0).step(-1).each do |number|
+      value = @monomios[number]&.value || 0
+      result << value
+    end
+    result
+  end
+
   def to_s
     output = ''
     @monomios.each_value do |mono|

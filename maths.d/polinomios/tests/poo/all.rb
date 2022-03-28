@@ -11,4 +11,5 @@ require_relative 'monomio_mul_test'
 require_relative 'monomio_div_test'
 
 require_relative 'polinomio/polinomio_test'
+require_relative 'polinomio/polinomio_to_a_test'
 require_relative 'polinomio/polinomio_to_s_test'
