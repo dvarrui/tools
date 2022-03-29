@@ -3,14 +3,14 @@
 require 'test/unit'
 require_relative '../../../lib/poo/monomio'
 
-class PooPolinomioTosTest < Test::Unit::TestCase
+class PooPolinomioToSTest < Test::Unit::TestCase
 
   def setup
     @m = []
-    @m << [ Monomio.new(5, 2), Monomio.new(-3, 1), Monomio.new(0, 0) ]
-    @m << [ Monomio.new(6, 3), Monomio.new(-2, 2), Monomio.new(0, 0) ]
-    @m << [ Monomio.new(7, 4), Monomio.new(0, 2), Monomio.new(-1, 0) ]
-    @m << [ Monomio.new(8, 5), Monomio.new(-4, 3), Monomio.new(1, 0) ]
+    @m << [ 5, -3, 0 ]
+    @m << [ 6, -2, 0, 0 ]
+    @m << [ 7, 0, 0, 0, -1]
+    @m << [ 8, 0, -4, 0, 0, 1]
   end
 
   def test_pol0_to_s
