@@ -1,7 +1,7 @@
 #!/usr/bin/env ruby
 
 require 'test/unit'
-require_relative '../../lib/poo/monomio'
+require_relative '../../../lib/poo/monomio'
 
 class PooMonomioArrayTest < Test::Unit::TestCase
 
