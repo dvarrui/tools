@@ -4,8 +4,9 @@ require_relative 'monomio'
 class Polinomio
   attr_accessor :monomios
 
-  def initialize(monomios = [])
-    @monomios = prepare_input monomios
+  def initialize(values = [])
+    @values = values
+    @monomios = prepare_input values
   end
 
   def to_h
@@ -64,17 +65,12 @@ class Polinomio
 
   private
 
-  def prepare_input(monomios)
+  def prepare_input(values)
     output = {}
-    monomios.each do |monomio|
-      raise '[ERROR] Entrada incorrecta al polinomio' unless monomio.class == Monomio
-      key = monomio.xexp
-      value = monomio
-      if output[key].nil?
-        output[key] = monomio
-      else
-        output[key] = output[key] + monomio
-      end
+    max = values.size - 1
+    values.each_with_index do |value, index|
+      xexp = max - index
+      output[xexp] = Monomio.new(value, xexp)
     end
     output
   end

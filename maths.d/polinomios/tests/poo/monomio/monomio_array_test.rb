@@ -15,30 +15,30 @@ class PooMonomioArrayTest < Test::Unit::TestCase
 
   def test_m0_to_a
     m = @m[0]
-    assert_equal [5, 0], m[0].to_a
-    assert_equal [-3, 0], m[1].to_a
-    assert_equal [0, 0], m[2].to_a
+    assert_equal [5], m[0].to_a
+    assert_equal [-3], m[1].to_a
+    assert_equal [0], m[2].to_a
   end
 
   def test_m1_to_a
     m = @m[1]
-    assert_equal [6, 1], m[0].to_a
-    assert_equal [-2, 1], m[1].to_a
-    assert_equal [0, 1], m[2].to_a
+    assert_equal [6, 0], m[0].to_a
+    assert_equal [-2, 0], m[1].to_a
+    assert_equal [0, 0], m[2].to_a
   end
 
   def test_m2_to_a
     m = @m[2]
-    assert_equal [7, 2], m[0].to_a
-    assert_equal [-1, 2], m[1].to_a
-    assert_equal [0, 2], m[2].to_a
+    assert_equal [7, 0, 0], m[0].to_a
+    assert_equal [-1, 0, 0], m[1].to_a
+    assert_equal [0, 0, 0], m[2].to_a
   end
 
   def test_m3_to_a
     m = @m[3]
-    assert_equal [8, 3], m[0].to_a
-    assert_equal [-4, 3], m[1].to_a
-    assert_equal [0, 3], m[2].to_a
+    assert_equal [8, 0, 0, 0], m[0].to_a
+    assert_equal [-4, 0, 0, 0], m[1].to_a
+    assert_equal [0, 0, 0, 0], m[2].to_a
   end
 
 end
