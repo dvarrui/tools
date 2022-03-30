@@ -45,7 +45,7 @@ class Monomio
   end
 
   def to_pol
-    p = Polinomio.new( [self.to_a])
+    p = Polinomio.new( self.to_a )
   end
 
   def +(monomio)

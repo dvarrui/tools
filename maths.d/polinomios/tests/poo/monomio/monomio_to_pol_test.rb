@@ -17,6 +17,9 @@ class PooMonomioToPolTest < Test::Unit::TestCase
     mono = Monomio.new(-1,0)
     assert_equal [ -1 ], mono.to_a
     assert_equal "-1", mono.to_s
+    pol = mono.to_pol
+    assert_equal [ -1 ], pol.to_a
+    assert_equal "-1", pol.to_s
   end
 
 end
