@@ -10,7 +10,7 @@ p m
 puts m
 puts m.to_h
 
-puts "[info] Polinomio 3,2 -5,0"
-p = Polinomio.new( [Monomio.new(3,2), Monomio.new(-5,0)])
+puts "[info] Polinomio 3,0,-5"
+p = Polinomio.new( [3, 0, -5] )
 puts p
 puts p.to_h
