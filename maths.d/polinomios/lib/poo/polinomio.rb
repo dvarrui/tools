@@ -49,7 +49,7 @@ class Polinomio
     Polinomio.new(polinomio)
   end
 
-  def *(monomio)
+  def *(polinomio)
     result = {}
     polinomio.each_pair do |key, monomio|
       result[:key] = @monomios[key] - monomio
