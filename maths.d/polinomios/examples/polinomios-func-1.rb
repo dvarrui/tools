@@ -1,6 +1,5 @@
 #!/usr/bin/env ruby
 
-require_relative '../lib/func.1/monomio'
 require_relative '../lib/func.1/polinomio'
 
 def monomios
@@ -33,26 +32,27 @@ def polinomios
 end
 
 
-puts '-'
+puts '=' * 20
 pol1h = { 2 => 1, 1 => 0, 0 => 2 }
 pol2h = { 2 => 1, 1 => 0, 0 => -2 }
 
-Polinomio.puts_h_to_s pol1h
-Polinomio.puts_h_to_s pol2h
+puts "Polinomios"
+Polinomio.puts pol1h
+Polinomio.puts pol2h
 
-puts "Suma"
+puts "\nSuma"
 sum = Polinomio.add(pol1h, pol2h)
-Polinomio.puts_h_to_s sum
+Polinomio.puts sum
 
-puts "Resta"
+puts "\nResta"
 del = Polinomio.del(pol1h, pol2h)
-Polinomio.puts_h_to_s del
+Polinomio.puts del
 
-puts "Mul"
+puts "\nMuliplicación"
 pol1h = { 2 => 2, 1 => 0, 0 => 2 }
 pol2h = { 2 => 0, 1 => 3, 0 => -1 }
 mul = Polinomio.mul(pol1h, pol2h)
 
-Polinomio.puts_h_to_s pol1h
-Polinomio.puts_h_to_s pol2h
-Polinomio.puts_h_to_s mul
+Polinomio.puts pol1h
+Polinomio.puts pol2h
+Polinomio.puts mul

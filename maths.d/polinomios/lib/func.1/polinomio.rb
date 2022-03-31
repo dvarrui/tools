@@ -6,7 +6,6 @@ class Polinomio
   def self.hash_to_a(polinomio_hash)
     polinomio_array = []
     xexps = polinomio_hash.keys
-    #require 'pry-byebug'; binding.pry
     xexps.sort.reverse.each do |xexp|
       value = polinomio_hash[xexp]
       polinomio_array << [ value, xexp ]
@@ -79,14 +78,20 @@ class Polinomio
   end
 
   def self.puts(polinomio)
-    STDOUT.puts polinomio.to_s
+    if polinomio.class == Array
+      puts_array(polinomio)
+    elsif polinomio.class == Hash
+      puts_hash(polinomio)
+    else
+      STDOUT.puts polinomio.to_s
+    end
   end
 
-  def self.puts_a_to_s(polinomio)
+  def self.puts_array(polinomio)
     STDOUT.puts(array_to_s(polinomio))
   end
 
-  def self.puts_h_to_s(polinomio)
+  def self.puts_hash(polinomio)
     STDOUT.puts(array_to_s(hash_to_a(polinomio)))
   end
 end
