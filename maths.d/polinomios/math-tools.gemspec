@@ -2,10 +2,10 @@
 
 $LOAD_PATH.unshift File.expand_path("../lib", __FILE__)
 
-name = "polinomios"
+name = "math-tools"
 require "#{name}/version"
 
-Gem::Specification.new name, Polinomios::VERSION do |s|
+Gem::Specification.new name, MathTools::VERSION do |s|
   s.summary     = "Utilidades para usar con polinomios"
   s.email       = "dvarrui@protonmail.com"
   s.homepage    = Polinomios::HOMEPAGE
