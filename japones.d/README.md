@@ -15,7 +15,7 @@ Para instalar el programa:
 ## Modo de Uso
 
 1. Abrir un terminal
-2. Ejecutar `japones-tool`.
+2. Ejecutar `hiragana-game`.
 
 # Silabario japonés
 
