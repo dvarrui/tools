@@ -23,9 +23,10 @@ class Hiragana
   end
 
   def self.show_help
-    puts "[INFO] Hiragana help::\n\n"
+    Debug.puts_line
+    puts "Hiragana help\n".upcase.cyan
 
-    Debug.puts Hiragana.group1
-    Debug.puts Hiragana.group2
+    Debug.puts_group Hiragana.group1
+    Debug.puts_group Hiragana.group2
   end
 end

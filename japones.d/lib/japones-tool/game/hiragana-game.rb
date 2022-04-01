@@ -3,20 +3,29 @@
 require_relative '../debug'
 require_relative '../hiragana'
 
-Hiragana.show_help
+class HiraganaGame
 
-keys = Hiragana.group1.keys
-score = 1
-max = 10
-while score < max
-  keys.shuffle!
-  keys.each do |key|
-    print "[ #{score}/#{max} ] #{Hiragana.group1[key]} ? "
-    resp = STDIN.gets.chomp
-    if resp == key.to_s
-      score += 1
-    else
-      puts "La respuesta es #{key}"
+  def self.run
+    Hiragana.show_help
+
+    Debug.puts_line
+    keys = Hiragana.group1.keys
+    score = 1
+    max = 10
+    while score < max
+      keys.shuffle!
+      keys.each do |key|
+        japanise = Hiragana.group1[key]
+        progress = "[ #{score}/#{max} ]"
+        print  "#{progress.white} #{japanise.light_yellow} ? "
+        resp = STDIN.gets.chomp
+        exit if resp.empty?
+        if resp == key.to_s
+          score += 1
+        else
+          puts "La respuesta es #{key}".light_red
+        end
+      end
     end
   end
 end
