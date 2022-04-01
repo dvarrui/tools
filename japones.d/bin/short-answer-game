@@ -3,4 +3,6 @@ $LOAD_PATH.unshift File.expand_path('../../lib', __FILE__)
 
 require 'japones-tool/game/short-answer-game'
 
-ShortAnswerGame.run
+level = 2
+ShortAnswerGame.show_help(level)
+ShortAnswerGame.new(level).run

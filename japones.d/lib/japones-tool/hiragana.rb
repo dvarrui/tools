@@ -22,11 +22,11 @@ class Hiragana
     }
   end
 
-  def self.show_help
+  def self.show_help(level=1)
     Debug.puts_line
     puts "Hiragana help\n".upcase.cyan
 
     Debug.puts_group Hiragana.group1
-    Debug.puts_group Hiragana.group2
+    Debug.puts_group Hiragana.group2 if level > 1
   end
 end
