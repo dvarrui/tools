@@ -3,7 +3,7 @@
 require_relative '../debug'
 require_relative '../hiragana'
 
-class HiraganaGame
+class ShortAnswerGame
 
   def self.run
     Hiragana.show_help

@@ -1,6 +1,6 @@
 #!/usr/bin/env ruby
 $LOAD_PATH.unshift File.expand_path('../../lib', __FILE__)
 
-require 'japones-tool/game/hiragana-game'
+require 'japones-tool/game/short-answer-game'
 
-HiraganaGame.run
+ShortAnswerGame.run
