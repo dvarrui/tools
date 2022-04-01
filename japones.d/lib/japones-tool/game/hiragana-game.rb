@@ -1,19 +1,17 @@
 #!/usr/bin/env ruby
 
-require_relative 'lib/debug'
-require_relative 'lib/hiragana'
+require_relative '../debug'
+require_relative '../hiragana'
 
-puts "[INFO] Repaso:\n\n"
-
-Debug.puts Hiragana.group1
-Debug.puts Hiragana.group2
+Hiragana.show_help
 
 keys = Hiragana.group1.keys
-keys.shuffle!
-score = 0
-while score < 10
+score = 1
+max = 10
+while score < max
+  keys.shuffle!
   keys.each do |key|
-    print "[ Score #{score} ]#{Hiragana.group1[key]} = ? "
+    print "[ #{score}/#{max} ] #{Hiragana.group1[key]} ? "
     resp = STDIN.gets.chomp
     if resp == key.to_s
       score += 1

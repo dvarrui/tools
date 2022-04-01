@@ -1,7 +1,7 @@
-#!/usr/bin/env ruby
+require 'colorize'
+require_relative 'debug'
 
 # Silabario japonés
-
 class Hiragana
 
   def self.group1
@@ -20,5 +20,12 @@ class Hiragana
       ke: "\u{3051}",
       ko: "\u{3053}"
     }
+  end
+
+  def self.show_help
+    puts "[INFO] Hiragana help::\n\n"
+
+    Debug.puts Hiragana.group1
+    Debug.puts Hiragana.group2
   end
 end
