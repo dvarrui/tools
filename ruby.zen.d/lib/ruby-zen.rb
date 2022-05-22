@@ -15,7 +15,8 @@ class RubyZen
   end
 
   def self.show(options)
-    app = Application.new
+    lang = options['lang']&.to_symbol || :en
+    app = Application.new(lang)
     Rules.new(app).show(options)
   end
 end

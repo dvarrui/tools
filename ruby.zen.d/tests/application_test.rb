@@ -12,15 +12,6 @@ class ApplicationTest < Minitest::Test
     assert_equal :es, @app.lang
   end
 
-  def test_config_filepath
-    filepath = File.join('lib',
-                         Application::GEMNAME,
-                         'files',
-                         Application::ZEN_FILENAME)
-
-    assert @app.config_filepath.include? filepath
-  end
-
   def test_langs_defined
     langs = @app.data.keys
     assert_equal 2, langs.size
