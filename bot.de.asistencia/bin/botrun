@@ -20,10 +20,13 @@ Telegram::Bot::Client.run(token) do |bot|
     counter += 1
 
     text = '?'
+    chatid = Regexp.new(action[:chatid][:rex])
     hello = Regexp.new(action[:hello][:rex])
     bye = Regexp.new(action[:bye][:rex])
 
     case message.text
+    when chatid
+      text = "#{action[:chatid][:text]}#{message.chat.id}"
     when hello
       text = action[:hello][:text]
     when bye

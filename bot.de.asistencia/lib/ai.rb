@@ -8,6 +8,8 @@ class Custom
 
   def init_actions(bot_username)
     @action = {
+                chatid: { rex: "/chatid|chatid#{bot_username}",
+                         text: "chat_id = " },
                 hello: { rex: "/hello|hello#{bot_username}",
                          text: "Hello Word!" },
                 bye: { rex:"/bye|bye#{bot_username}",
