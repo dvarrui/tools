@@ -10,10 +10,10 @@ class CLI < Thor
     puts Iris::VERSION
   end
 
-  map ['i', '-i', '--interactive'] => 'interactive'
-  desc 'interactive', 'Send message interactive mode'
-  def interactive
-    Iris.send_interactive_message
+  map ['--chatid'] => 'chatid'
+  desc 'chatid', 'Find Telegram chat ID'
+  def chatid
+    Iris.find_telegram_chat_id
   end
 
   map ['f', '-f', '--file'] => 'file'
@@ -23,5 +23,12 @@ class CLI < Thor
     filename = options['name']
     Iris.send_file_as_message(filename)
   end
+
+  map ['s', '-s', '--send'] => 'send'
+  desc 'send', 'Send message interactively'
+  def send
+    Iris.send_interactive_message
+  end
+
 
 end

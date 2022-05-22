@@ -1,9 +1,14 @@
 # frozen_string_literal: true
 
-require_relative "iris/version"
 require 'colorize'
+require_relative "iris/version"
+require_relative 'iris/find_chat_id'
 
 module Iris
+
+  def self.find_telegram_chat_id
+    FindChatId.call
+  end
 
   def self.send_interactive_message
     puts "===> Sending interactive message.".white
