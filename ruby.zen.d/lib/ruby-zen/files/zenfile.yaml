@@ -1,4 +1,28 @@
 # encoding: UTF-8
+:en:
+- :rule: Emphasize human needs more than those of the machine.
+  :desc:
+    - Put the focus more on the programmer and less on the machine.
+    - Often people, especially computer engineers, focus on machines.
+    - They think, "By doing this, the machine will run faster. By doing this, the machine will run more efficiently. "Doing this..." They are machine-centric.
+    - We really need to focus on people, how they make programs or how they handle applications.
+    - We are the bosses. They are the slaves.
+- :rule: El principio de la menor sorpresa.
+  :desc:
+    - Language should behave in such a way as to minimize confusion among experienced users.
+    - Matz defined it this way in an interview. Everyone has a personal past.
+    - Someone may come from another language and may be surprised by different aspects of the language.
+    - Then they might say, 'I'm surprised by this feature of language, so Ruby violates the principle of least surprise.
+    - Wait, wait. The principle of least surprise is NOT just for you.
+    - The principle of least surprise means that Ruby's rules don't change. There are no exceptions.
+    - Once you know the rules. There are no surprises.
+- :rule: Matz ha dicho que su principal objetivo era hacer un lenguaje que le divirtiera
+  :desc:
+    - For fun we will minimize programming work and possible confusion.
+    - That is, rule 1 and rule 2 lead to fun.
+    - Fun brings joy.
+    - Joy gives happiness.
+    - The Ruby path leads us to happiness!
 :es:
 - :rule: Enfatizar las necesidades humanas más que de las de la máquina.
   :desc:
@@ -23,12 +47,3 @@
     - La diversión da alegría.
     - La alegría da felicidad.
     - El camino Ruby nos lleva a la felicidad!
-:en:
-- :rule: Emphasize human needs more than those of the machine.
-  :desc:
-    - Put the focus more on the programmer and less on the machine.
-    - A menudo la gente, especialmente los ingenieros en computación, se centran en las máquinas. Ellos piensan, "Haciendo esto, la máquina funcionará más rápido. Haciendo esto, la máquina funcionará de manera más eficiente. Haciendo esto..." Están centrados en las máquinas, pero en realidad necesitamos centrarnos en las personas, en cómo hacen programas o cómo manejan las aplicaciones en los ordenadores. Nosotros somos los jefes. Ellos son los esclavos.
-- :rule: El principio de la menor sorpresa.
-  :desc: El lenguaje debe comportarse de tal manera que minimice la confusión de los usuarios experimentados.
-- :rule: Matz ha dicho que su principal objetivo era hacer un lenguaje que le divirtiera
-  :desc: Para divertirse vamos a minimizar el trabajo de programación y la posible confusión.
