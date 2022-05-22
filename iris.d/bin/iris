@@ -1,0 +1,41 @@
+#!/usr/bin/env ruby
+
+require 'telegram/bot'
+
+# token:
+# 1. Write your TOKEN value into "token" variable or
+# 2. Create a local file "private.token" with your TOKEN value inside
+token = `cat private.token`.strip
+bot_username = '@dvarrui_bot'
+
+custom = Custom.new(bot_username)
+action = custom.action
+counter = 0
+puts "[INFO] Running bot #{$0}..."
+
+Telegram::Bot::Client.run(token) do |bot|
+  bot.listen do |message|
+    puts " => #{message.text}"
+    counter += 1
+
+    text = '?'
+    hello = Regexp.new(action[:hello][:rex])
+    bye = Regexp.new(action[:bye][:rex])
+
+    case message.text
+    when hello
+      text = action[:hello][:text]
+    when bye
+      text = action[:bye][:text]
+      wanna_exit = true
+    end
+    if wanna_exit
+      if counter > 3
+        bot.api.send_message(chat_id: message.chat.id, text: text)
+        exit 0
+      end
+    else
+      bot.api.send_message(chat_id: message.chat.id, text: text)
+    end
+  end
+end
