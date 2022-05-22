@@ -7,7 +7,7 @@ Bot that answers user questions.
 
 * Install Ruby.
 * Install Ruby Gems, `sudo bundle install`.
-* Execute `run-bot`.
+* Execute `bin/botrun`.
 
 # Documentation
 

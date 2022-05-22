@@ -1,8 +1,7 @@
 #!/usr/bin/env ruby
 
 require 'telegram/bot'
-require 'pry-byebug'
-require_relative 'lib/ai'
+require_relative '../lib/ai'
 
 # token:
 # 1. Write your TOKEN value into "token" variable or
@@ -10,13 +9,17 @@ require_relative 'lib/ai'
 token = `cat private.token`.strip
 bot_username = '@dvarrui_bot'
 
-custom = Custom.new(token: token, bot_username: bot_username)
-
+custom = Custom.new(bot_username)
+action = custom.action
+counter = 0
 puts "[INFO] Running bot #{$0}..."
 
 Telegram::Bot::Client.run(token) do |bot|
   bot.listen do |message|
     puts " => #{message.text}"
+    counter += 1
+
+    text = '?'
     hello = Regexp.new(action[:hello][:rex])
     bye = Regexp.new(action[:bye][:rex])
 
@@ -24,10 +27,16 @@ Telegram::Bot::Client.run(token) do |bot|
     when hello
       text = action[:hello][:text]
     when bye
-      text = action[:hello][:text]
+      text = action[:bye][:text]
       wanna_exit = true
     end
-    bot.api.send_message(chat_id: message.chat.id, text: text)
-    exit 0 if wanna_exit
+    if wanna_exit
+      if counter > 3
+        bot.api.send_message(chat_id: message.chat.id, text: text)
+        exit 0
+      end
+    else
+      bot.api.send_message(chat_id: message.chat.id, text: text)
+    end
   end
 end

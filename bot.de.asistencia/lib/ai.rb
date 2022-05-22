@@ -1,12 +1,12 @@
 
 class Custom
-  def initialize(token:, bot_username:)
+  attr_reader :action
+
+  def initialize(bot_username)
+    init_actions(bot_username)
   end
 
-  def init_actions
-    hello = Regexp.new(action[:hello][:rex])
-    bye = Regexp.new(action[:bye][:rex])
-
+  def init_actions(bot_username)
     @action = {
                 hello: { rex: "/hello|hello#{bot_username}",
                          text: "Hello Word!" },
