@@ -1,8 +1,15 @@
 # frozen_string_literal: true
 
 require_relative "iris/version"
+require 'colorize'
 
 module Iris
-  class Error < StandardError; end
-  # Your code goes here...
+
+  def self.send_interactive_message
+    puts "===> Sending interactive message.".white
+  end
+
+  def self.send_file_as_message(filename)
+    puts "===> Sending <#{filename}> file as message.".white
+  end
 end

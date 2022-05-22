@@ -1,5 +1,5 @@
 require 'thor'
-require_relative '../learn-japanese'
+require_relative '../iris'
 
 class CLI < Thor
   map ['h', '-h', '--help'] => 'help'
@@ -7,34 +7,21 @@ class CLI < Thor
   map ['v', '-v', '--version'] => 'version'
   desc 'version', 'Show the program version'
   def version
-    LearnJapanese.show_version
+    puts Iris::VERSION
   end
 
-  map ['ca', '-ca', '--choose-answer', 'choose-answer'] => 'choose_answer'
-  option :level
-  desc 'choose-answer [--level=NUMBER]', 'Values 1-6'
-  def choose_answer()
-    level = options[:level].to_i
-    LearnJapanese.choose_answer(level)
+  map ['i', '-i', '--interactive'] => 'interactive'
+  desc 'interactive', 'Send message interactive mode'
+  def interactive
+    Iris.send_interactive_message
   end
 
-  map ['sa', '-sa', '--short-answer', 'short-answer'] => 'short_answer'
-  option :level
-  desc 'short-answer [--level=NUMBER]', 'Values 1-6'
-  def short_answer()
-    level = options[:level].to_i
-    LearnJapanese.short_answer(level)
+  map ['f', '-f', '--file'] => 'file'
+  option :name
+  desc 'file [--name=FILENAME]', 'Send files as message'
+  def file
+    filename = options['name']
+    Iris.send_file_as_message(filename)
   end
 
-  map ['so', '-so', '--sound', 'sound'] => 'sound'
-  desc 'sound', 'Util: Write sounds and show Hiragana'
-  def sound
-    LearnJapanese.sound
-  end
-
-  map ['ro', '-ro', '--romanji' ] => 'romaji'
-  desc 'romaji', 'You have to Write Romaji for every Hiragana word'
-  def romaji
-    LearnJapanese.romaji
-  end
 end
