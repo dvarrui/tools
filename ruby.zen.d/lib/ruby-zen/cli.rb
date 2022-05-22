@@ -24,15 +24,14 @@ class CLI < Thor
   end
 
   map ['-s', '--show'] => 'show'
-  option :more, type: :boolean
   option :step, type: :boolean
+  option :full, type: :boolean
   option :lang, type: :string
-  desc 'show [LANG]', 'Display ZEN rules in the chosen language'
+  desc 'show [--step, --full, --lang=[LANG]]', 'Display ZEN rules in the chosen language'
   long_desc <<-LONGDESC
     Display the rules in the chosen language
   LONGDESC
   def show
-    # Typical error... write show(options) instead of show! jajaja
     RubyZen.show(options)
   end
 

@@ -7,10 +7,13 @@ class Rules
     @app = application
   end
 
-  def show(options = { 'more' => false, 'step' => true })
-    if options['more']
-      step = options['step']
-      show_more(step: step)
+  def show(options = { 'full' => false, 'step' => true })
+    full = options['full']
+    step = options['step']
+
+    full = true if step
+    if full
+      show_full(step: step)
     else
       show_only_names
     end
@@ -26,7 +29,7 @@ class Rules
     puts
   end
 
-  def show_more(step:)
+  def show_full(step:)
     show_title
 
     @app.rules.each_with_index do |rule, index|
