@@ -1,7 +1,7 @@
 
 module Params
   NAME         = 'rubyzen'
-  VERSION      = '0.0.5'
+  VERSION      = '0.0.6'
   GEMNAME      = 'ruby-zen'
   LANGS        = [ :es, :en ]
   ZEN_FILENAME = 'zenfile.yaml'

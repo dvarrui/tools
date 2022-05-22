@@ -6,7 +6,7 @@ require_relative '../lib/ruby-zen/params'
 class ParamsTest < Minitest::Test
 
   def test_params
-    langs = [ :es ]
+    langs = [ :es, :en ]
     assert_equal String        , Params::VERSION.class
     assert_equal 'rubyzen'     , Params::NAME
     assert_equal 'ruby-zen'    , Params::GEMNAME
