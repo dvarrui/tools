@@ -1,7 +1,6 @@
 #!/usr/bin/env ruby
 
 require 'test/unit' 
-
 extend Test::Unit::Assertions
 
 a = 2

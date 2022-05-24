@@ -14,5 +14,5 @@ c = a * b
 
 assert { a == 2 }
 assert { b == 3 }
-assert { c == 5 }
 
+assert { c == 5 }
