@@ -7,7 +7,7 @@ b = 3
 c = a * b
 
 Debug::assert a == 2
-Debug::assert b == 3
+Debug::assert { b == 3 }
 
 begin
   Debug::assert c == 5 
