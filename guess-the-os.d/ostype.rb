@@ -1,13 +1,16 @@
 #!/usr/bin/env ruby 
 
 def get_ostype
-  type = 'linux' if File.exist? "/home"
-  # env|grep OSTYPE => "OSTYPE=linux-gnu"
+  return 'linux' if File.exist? "/home"
+  
+  output = `env | grep OSTYPE`.chmop
+  return 'linux' if output == 'linux-gnu'
+  return 'android' if output == 'linux-andriod'
  
-  type = 'windows' if File.exist? "C:\\Windows"
-  type = 'mac' if File.exist? "/Users"
+  return 'windows' if File.exist? "C:\\Windows"
+  return 'mac' if File.exist? "/Users"
 
-  return type 
+  return 'unkown' 
 end
 
 puts get_ostype
