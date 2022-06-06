@@ -5,7 +5,7 @@ require_relative "lib/iris/version"
 Gem::Specification.new do |s|
   s.name        = 'iris'
   s.version     =  Iris::VERSION
-  s.summary     = "Send message to Telegram and Twitter account."
+  s.summary     = "Send message to Telegram Chat and Twitter account."
   s.email       = "dvarrui@protonmail.com"
   s.homepage    = Iris::HOMEPAGE
   s.authors     = ["David Vargas Ruiz"]
