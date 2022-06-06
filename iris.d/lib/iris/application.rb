@@ -1,7 +1,7 @@
 
 require 'singleton'
 
-class Aplication
+class Application
   include Singleton
 
   attr_reader :token
