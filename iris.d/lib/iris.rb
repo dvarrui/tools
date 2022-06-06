@@ -2,12 +2,12 @@
 
 require 'colorize'
 require_relative "iris/version"
-require_relative 'iris/find_chat_id'
+require_relative 'iris/show_chat_id'
 
 module Iris
 
-  def self.find_telegram_chat_id
-    FindChatId.call
+  def self.show_telegram_chat_id
+    ShowChatId.call
   end
 
   def self.send_interactive_message

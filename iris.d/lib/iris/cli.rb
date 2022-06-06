@@ -11,9 +11,9 @@ class CLI < Thor
   end
 
   map ['--chatid'] => 'chatid'
-  desc 'chatid', 'Find Telegram chat ID'
+  desc 'chatid', 'Show Telegram chat ID'
   def chatid
-    Iris.find_telegram_chat_id
+    Iris.show_telegram_chat_id
   end
 
   map ['f', '-f', '--file'] => 'file'
