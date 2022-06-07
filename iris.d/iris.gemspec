@@ -14,7 +14,8 @@ Gem::Specification.new do |s|
   s.license     = "GPL-3"
   s.required_ruby_version = ">= 2.6.0"
 
-  s.add_runtime_dependency 'telegram-bot-ruby'
   s.add_runtime_dependency 'colorize'
   s.add_runtime_dependency 'thor'
+  s.add_runtime_dependency 'telegram-bot-ruby'
+  s.add_runtime_dependency 'twitter'
 end
