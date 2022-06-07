@@ -2,19 +2,18 @@
 
 require 'colorize'
 require_relative "iris/version"
-require_relative 'iris/show_chat_id'
+require_relative 'iris/show_chatid'
 
 module Iris
-
-  def self.show_telegram_chat_id
+  def self.show_telegram_chatid
     ShowChatId.call
   end
 
-  def self.send_interactive_message
-    puts "===> Sending interactive message.".white
-  end
-
-  def self.send_file_as_message(filename)
-    puts "===> Sending <#{filename}> file as message.".white
+  def self.send_message(filename)
+    if filename.nil?
+      puts "===> Sending interactive message.".white
+    else
+      puts "===> Sending <#{filename}> file as message.".white
+    end
   end
 end

@@ -13,22 +13,14 @@ class CLI < Thor
   map ['--chatid'] => 'chatid'
   desc 'chatid', 'Show Telegram chat ID'
   def chatid
-    Iris.show_telegram_chat_id
-  end
-
-  map ['f', '-f', '--file'] => 'file'
-  option :name
-  desc 'file [--name=FILENAME]', 'Send files as message'
-  def file
-    filename = options['name']
-    Iris.send_file_as_message(filename)
+    Iris.show_telegram_chatid
   end
 
   map ['s', '-s', '--send'] => 'send'
-  desc 'send', 'Send message interactively'
+  option :filename
+  desc 'send [--file=FILENAME]', 'Send message'
   def send
-    Iris.send_interactive_message
+    Iris.send_message(options['file'])
   end
-
 
 end
