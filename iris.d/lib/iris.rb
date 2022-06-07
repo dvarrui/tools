@@ -11,8 +11,7 @@ module Iris
 
   def self.send_message(filename)
     if filename.nil?
-      puts "===> Sending interactive message.".white
-
+      MyTelegram.new.send_text("Sending interactive message.")
     else
       puts "===> Sending <#{filename}> file as message.".white
     end
