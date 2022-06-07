@@ -12,3 +12,5 @@ TODO
 
 Run `iris`command.
 
+Info:
+* https://www.rubydoc.info/gems/twitter/
