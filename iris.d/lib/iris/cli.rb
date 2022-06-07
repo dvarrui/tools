@@ -23,4 +23,7 @@ class CLI < Thor
     Iris.send_message(options['file'])
   end
 
+  def self.exit_on_failure?
+    false
+  end
 end
