@@ -5,13 +5,16 @@ require 'yaml'
 class Application
   include Singleton
 
-  attr_reader :token
-  attr_reader :bot_username
-
   def initialize
-    data = load_configuration
-    @token = data[:telegram][:token]
-    @bot_username = data[:telegram][:bot_username]
+    @data = load_configuration
+  end
+
+  def telegram
+    @data[:telegram]
+  end
+
+  def twitter
+    @data[:twitter]
   end
 
   private

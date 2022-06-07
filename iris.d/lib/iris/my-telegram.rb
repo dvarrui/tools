@@ -1,16 +1,17 @@
-#!/usr/bin/env ruby
 
 require 'telegram/bot'
 require_relative 'application'
 
-module ShowChatId
+class MyTelegram
 
-  def self.call
-    token = Application.instance.token
-    bot_username = Application.instance.bot_username
+  def initialize
+    @token = Application.instance.telegram[:token]
+    @bot_username = Application.instance.telegram[:bot_username]
+  end
 
-    puts "===> Running Telegram bot #{bot_username}..."
-    Telegram::Bot::Client.run(token) do |bot|
+  def show_chatid
+    puts "===> Running Telegram bot #{@bot_username}..."
+    Telegram::Bot::Client.run(@token) do |bot|
       bot.listen do |message|
         puts "<=== #{message.text}"
 
