@@ -14,11 +14,11 @@ module Iris
       puts "===> Running Telegram bot #{@bot_username}..."
       Telegram::Bot::Client.run(@token) do |bot|
         bot.listen do |message|
-          puts "<=== #{message.text}"
+          puts "<=== [Received]#{message.text}"
 
-          text = "Telegram Chat ID:  #{message.chat.id}"
+          text = "Chat ID:  #{message.chat.id}"
           bot.api.send_message(chat_id: message.chat.id, text: text)
-          puts "===> #{text}"
+          puts "===> [Send] #{text}"
           exit 0
         end
       end
@@ -39,7 +39,7 @@ module Iris
     def send(text)
       Telegram::Bot::Client.run(@token) do |bot|
         bot.api.send_message(chat_id: @chatid, text: text)
-        puts "===> #{text}"
+        puts "===> [Send] #{text}"
         exit 0
       end
     end
