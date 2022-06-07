@@ -13,21 +13,20 @@ module Iris
     end
 
     def send_text(text)
-      puts "===> [Twitter] sending message..."
+      puts "===> [Twitter] sending message...".cyan
       send(text)
     end
 
     def send_file(filename)
-      puts "===> [Twitter] sending file #{filename}..."
+      puts "===> [Twitter] sending file #{filename}...".cyan
       send(File.read(filename))
     end
 
     private
 
     def send(text)
-      @client.update(text)
-      puts "===> [Send] #{text}"
-      exit 0
+      #@client.update(text)
+      puts "     #{text}".white
     end
   end
 end
