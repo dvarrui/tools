@@ -1,7 +1,0 @@
----
-:telegram:
-  :token: Telegram TOKEN
-  :bot_username: Telegram Bot Uername
-  :chatid: Telegram Chat ID
-:twitter:
-  :token: Twitter Token

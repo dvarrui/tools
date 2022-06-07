@@ -10,6 +10,12 @@ class CLI < Thor
     puts Iris::VERSION
   end
 
+  map ['--init'] => 'init'
+  desc 'init', 'Create config file'
+  def init
+    Iris.init
+  end
+
   map ['--chatid'] => 'chatid'
   desc 'chatid', 'Show Telegram chat ID'
   def chatid
