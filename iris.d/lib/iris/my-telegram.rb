@@ -25,7 +25,18 @@ class MyTelegram
   end
 
   def send_text(text)
-    puts "===> Running Telegram bot #{@bot_username}..."
+    puts "===> [Telegram] #{@bot_username} sending message..."
+    send(text)
+  end
+
+  def send_file(filename)
+    puts "===> [Telegram] #{@bot_username} sending file #{filename}..."
+    send(File.read(filename))
+  end
+
+  private
+
+  def send(text)
     Telegram::Bot::Client.run(@token) do |bot|
       bot.api.send_message(chat_id: @chatid, text: text)
       puts "===> #{text}"

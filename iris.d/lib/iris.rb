@@ -9,11 +9,11 @@ module Iris
     MyTelegram.new.show_chatid
   end
 
-  def self.send_message(filename)
-    if filename.nil?
-      MyTelegram.new.send_text("Sending interactive message.")
-    else
-      puts "===> Sending <#{filename}> file as message.".white
-    end
+  def self.send_message(options)
+    filename = options['filename']
+    text = options['text']
+
+    MyTelegram.new.send_file(filename) if filename
+    MyTelegram.new.send_text(text) if text
   end
 end

@@ -17,10 +17,11 @@ class CLI < Thor
   end
 
   map ['s', '-s', '--send'] => 'send'
+  option :text
   option :filename
-  desc 'send [--file=FILENAME]', 'Send message'
+  desc 'send [--text=MESSAGE | --filename=FILENAME]', 'Send message'
   def send
-    Iris.send_message(options['file'])
+    Iris.send_message(options)
   end
 
   def self.exit_on_failure?
