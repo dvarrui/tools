@@ -3,7 +3,7 @@ require 'telegram/bot'
 require_relative 'application'
 
 module Iris
-  class Telegram
+  class TelegramWrapper
     def initialize
       @token = Application.instance.telegram[:token]
       @bot_username = Application.instance.telegram[:bot_username]

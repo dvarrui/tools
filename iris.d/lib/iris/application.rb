@@ -1,6 +1,7 @@
 
 require 'singleton'
 require 'yaml'
+require_relative 'skeleton'
 
 class Application
   include Singleton
@@ -21,7 +22,7 @@ class Application
 
   def load_configuration
     dirbase = File.dirname(__FILE__)
-    filepath = File.join(dirbase, '..', '..', 'private.config.yaml')
+    filepath = File.join(dirbase, '..', '..', Skeleton::CONFIGFILE)
     content = File.read filepath
     data = YAML.load(content)
 

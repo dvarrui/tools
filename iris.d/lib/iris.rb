@@ -4,7 +4,7 @@ require 'colorize'
 require 'fileutils'
 require_relative "iris/version"
 require_relative 'iris/skeleton'
-require_relative 'iris/telegram'
+require_relative 'iris/telegram-wrapper'
 
 module Iris
 
@@ -13,14 +13,14 @@ module Iris
   end
 
   def self.show_telegram_chatid
-    Iris::Telegram.new.show_chatid
+    Iris::TelegramWrapper.new.show_chatid
   end
 
   def self.send_message(options)
     filename = options['filename']
     text = options['text']
 
-    Iris::Telegram.new.send_file(filename) if filename
-    Iris::Telegram.new.send_text(text) if text
+    Iris::TelegramWrapper.new.send_file(filename) if filename
+    Iris::TelegramWrapper.new.send_text(text) if text
   end
 end
