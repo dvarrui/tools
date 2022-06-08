@@ -6,6 +6,7 @@ module Iris
   class TwitterWrapper
     def initialize
       app = Application.instance
+      @enable = app.twitter[:enable]
       @client = Twitter::REST::Client.new do |config|
         config.consumer_key        = app.twitter[:api_key]
         config.consumer_secret     = app.twitter[:api_key_secret]
@@ -13,12 +14,14 @@ module Iris
     end
 
     def send_text(text)
-      puts "===> [Twitter] sending message...".cyan
+      return false unless @enable
+      puts "===> [Twitter] sending message...".light_yellow
       send(text)
     end
 
     def send_file(filename)
-      puts "===> [Twitter] sending file #{filename}...".cyan
+      return false unless @enable
+      puts "===> [Twitter] sending file #{filename}...".light_yellow
       send(File.read(filename))
     end
 

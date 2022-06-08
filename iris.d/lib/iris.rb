@@ -18,14 +18,21 @@ module Iris
   end
 
   def self.send_message(options)
-    puts "===> [Iris] sending messages...".light_yellow
+    puts "===> [Iris] running...".cyan
     filename = options['filename']
     text = options['text']
 
-    Iris::TelegramWrapper.new.send_file(filename) if filename
-    if text
-      Iris::TelegramWrapper.new.send_text(text)
-      Iris::TwitterWrapper.new.send_text(text)
-    end
+    send_file(fielame) if filename
+    send_text_message(text) if text
+  end
+
+  def self.send_text_message(text)
+    Iris::TelegramWrapper.new.send_text(text)
+    Iris::TwitterWrapper.new.send_text(text)
+  end
+
+  def self.send_file(filename)
+    Iris::TelegramWrapper.new.send_file(filename)
+    Iris::TwitterWrapper.new.send_file(filename)
   end
 end
