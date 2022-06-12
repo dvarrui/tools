@@ -1,16 +1,15 @@
 
 class Answer
 
-  def initialize(faq)
-    @faq = faq
+  def initialize(filename)
+    @faq = YAML.load(File.read(filename))[:questions]
+
     #require 'debug'; binding.break
     @faq.each_with_index do |faq, index|
       words = faq['tags']&.split(',') || []
       words.map! { _1.strip.downcase }
       faq[:tags] = words
-      faq[:index] = index
-      faq[:q] = faq['q']
-      faq[:a] = faq['a']
+      faq[:id] = index
     end
   end
 
@@ -38,7 +37,9 @@ class Answer
       end
     end
 
-    output = select[:faq][:a] unless select[:faq].nil?
+    unless select[:faq].nil?
+      output = "#{select[:faq][:a]} /#{select[:faq][:id]}"
+    end
     output
   end
 

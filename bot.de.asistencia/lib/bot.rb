@@ -5,8 +5,8 @@ require_relative 'answer'
 
 module Bot
 
-  def self.run
-    answer       = Answer.new(Application.instance.faq)
+  def self.run(filename)
+    answer       = Answer.new(filename)
     token        = Application.instance.token
     bot_username = Application.instance.bot_username
 

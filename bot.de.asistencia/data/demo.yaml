@@ -1,10 +1,14 @@
 ---
-- q: ¿Qué es Ruby?
-  a: Ruby es un lenguaje de programación
-  tags: ruby
-- q: ¿Qué es GNU/Linux?
-  a: Es un sistema operativo de licencia libre
-  tags: sistema, operativo, gnu, linux
-- q: Significado de ASIR
-  a: Administración de Sistemas Informáticos y en Red
-  tags: asir, definir
+:telegram:
+  :token: TOKEN-HERE
+  :bot_username: '@dvarrui_bot'
+:questions:
+  - :q: Definición de Ruby
+    :a: Ruby es un lenguaje de programación
+    :tags: ruby, definir, lenguaje, programar
+  - :q: Definición de GNU/Linux
+    :a: Es un sistema operativo de licencia libre
+    :tags: sistema, operativo, gnu, linux, licencia, libre
+  - :q: Significado de ASIR
+    :a: Administración de Sistemas Informáticos y en Red
+    :tags: asir, definir
