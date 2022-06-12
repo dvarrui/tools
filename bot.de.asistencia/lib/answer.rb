@@ -37,7 +37,7 @@ class Answer
     end
 
     unless select[:faq].nil?
-      output = "#{select[:faq][:a]} /#{select[:faq][:id]}"
+      output = "#{select[:faq][:q]}: #{select[:faq][:a]} /#{select[:faq][:id]}"
     end
     output
   end

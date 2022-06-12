@@ -1,0 +1,14 @@
+---
+:telegram:
+  :token: TOKEN-HERE
+  :bot_username: BOT_USERNAME_HERE
+:questions:
+  - :q: Página web del centro IES Puerto de la Cruz
+    :a: iespto.es
+    :tags: web, centro, ies, puerto, cruz
+  - :q: Consultar la oferta educativa
+    :a: https://www3.gobiernodecanarias.org/medusa/edublog/iespuertodelacruztelesforobravo/oferta-educativa/
+    :tags: consultar, oferta, educativa, centro
+  - :q: Horarios del curso 21/22
+    :a: https://www3.gobiernodecanarias.org/medusa/edublog/iespuertodelacruztelesforobravo/horario-lectivo-semanal/
+    :tags: horario, horarios, curso, escolar, 2021, 21, 2022, 22

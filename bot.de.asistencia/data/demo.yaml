@@ -1,7 +1,7 @@
 ---
 :telegram:
   :token: TOKEN-HERE
-  :bot_username: '@dvarrui_bot'
+  :bot_username: BOT_USERNAME_HERE
 :questions:
   - :q: Definición de Ruby
     :a: Ruby es un lenguaje de programación
