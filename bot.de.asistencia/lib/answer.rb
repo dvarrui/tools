@@ -5,7 +5,9 @@ class Answer
     @faq = faq
     #require 'debug'; binding.break
     @faq.each_with_index do |faq, index|
-      faq[:tags] = faq['tags']&.split(',') || []
+      words = faq['tags']&.split(',') || []
+      words.map! { _1.strip.downcase }
+      faq[:tags] = words
       faq[:index] = index
       faq[:q] = faq['q']
       faq[:a] = faq['a']
@@ -22,23 +24,21 @@ class Answer
   private
 
   def response(input)
-    "¿Me estás preguntando por '#{input}'?"
-    ouput = "No tengo respuesta. ¡Lo siento!"
+    output = "No tengo respuesta. ¡Lo siento!"
 
-    words = input.split
+    #require 'debug'; binding.break
+    words = input.split.map!(&:downcase)
     select = { score: 0, faq: nil }
     @faq.each do |faq|
       score = 0
       words.each { |word| score +=1 if faq[:tags].include? word }
-      select[:faqid] = faq[:id]
       if score > select[:score]
         select[:score] = score
         select[:faq] = faq
       end
     end
 
-    output = select[:faq][:a] if select[:score] > 0
-    require 'debug'; binding.break
+    output = select[:faq][:a] unless select[:faq].nil?
     output
   end
 
