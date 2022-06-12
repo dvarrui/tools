@@ -1,5 +1,10 @@
 ---
 - q: ¿Qué es Ruby?
   a: Ruby es un lenguaje de programación
+  tags: ruby, qué, que
 - q: ¿Qué es GNU/Linux?
   a: Es un sistema operativo de licencia libre
+  tags: sistema, operativo, qué, que
+- q: Significado de ASIR
+  a: Administración de Sistemas Informáticos y en Red
+  tag: significado, fp, asir, qué, que

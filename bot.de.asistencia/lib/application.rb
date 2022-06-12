@@ -11,6 +11,6 @@ class Application
   def initialize
     @token = `cat private.token`.strip
     @bot_username = '@dvarrui_bot'
-    @faq = YAML.load('data/demo.yaml')
+    @faq = YAML.load(File.read('data/demo.yaml'))
   end
 end
