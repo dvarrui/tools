@@ -4,9 +4,8 @@ class Answer
   def initialize(filename)
     @faq = YAML.load(File.read(filename))[:questions]
 
-    #require 'debug'; binding.break
     @faq.each_with_index do |faq, index|
-      words = faq['tags']&.split(',') || []
+      words = faq[:tags]&.split(',') || []
       words.map! { _1.strip.downcase }
       faq[:tags] = words
       faq[:id] = index
