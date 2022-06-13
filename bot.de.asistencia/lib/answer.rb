@@ -54,11 +54,15 @@ class Answer
     responses = responses.sort_by{ _1[0] }.reverse
     faq = responses[0][:faq]
     if (words.size.to_f/faq.size.to_f*100) > 50.0
+      # respuesta clara
       output = "#{faq[:q]}: #{faq[:a]} /#{faq[:id]}"
     else
-      output = ""
+      if responses.size > 1
+        output = "Tengo varías posibilidades:\n"
+      else
+        output = "No lo sé! Pero te puedo responder a:\n"
+      end
 
-      #require 'debug'; binding.break
       responses.each do |response|
         faq = response[:faq]
         output += "=> /#{faq[:id]} : #{faq[:q]}\n"
