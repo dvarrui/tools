@@ -8,37 +8,60 @@ class Answer
       words = faq[:tags]&.split(',') || []
       words.map! { _1.strip.downcase }
       faq[:tags] = words
+      faq[:q].split.each { faq[:tags] << _1 }
       faq[:id] = index
     end
   end
 
   def to(input)
     puts "<=== #{input}"
-    text = response(input)
+    if is_number?(input)
+      text = find_answer_index input.to_i
+    else
+     text = respond(input)
+    end
     puts "===> #{text}"
     return text
   end
 
   private
 
-  def response(input)
-    output = "No tengo respuesta. ¡Lo siento!"
+  def is_number?(input)
+    input.to_i.to_s == input
+  end
 
-    #require 'debug'; binding.break
+  def find_answer_index(index)
+    return "Sólo tengo #{@faq.size - 1} respuestas!" if index >= @faq.size
+
+    faq = @faq[index]
+    output = "#{faq[:q]}: #{faq[:a]} /#{faq[:id]}"
+  end
+
+  def respond(input)
     words = input.split.map!(&:downcase)
-    select = { score: 0, faq: nil }
+    responses = []
     @faq.each do |faq|
       score = 0
       words.each { |word| score +=1 if faq[:tags].include? word }
-      if score > select[:score]
-        select[:score] = score
-        select[:faq] = faq
-      end
+      next if score.zero?
+      responses <<  { score: score, faq: faq }
     end
 
-    unless select[:faq].nil?
-      output = "#{select[:faq][:q]}: #{select[:faq][:a]} /#{select[:faq][:id]}"
+    if responses.zero?
+      return = "No tengo respuesta. ¡Lo siento!"
     end
+
+    relevant = responses.sort_by{ _1[0] }.reverse
+    faq = relevant[0][:faq]
+    if (words.size.to_f/faq.size.to_f*100) > 50.0
+      output = "#{faq[:q]}: #{faq[:a]} /#{faq[:id]}"
+    else
+      output = ""
+      relevant.each do |response|
+        faq = response[1]
+        output += "=> /#{faq[:id]} : #{faq[:q]}\n"
+    end
+
     output
   end
 
