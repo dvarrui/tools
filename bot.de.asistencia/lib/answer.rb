@@ -47,22 +47,24 @@ class Answer
       responses <<  { score: score, faq: faq }
     end
 
-    if responses.zero?
-      return = "No tengo respuesta. ¡Lo siento!"
+    if responses.size.zero?
+      return "No tengo respuesta. ¡Lo siento!"
     end
 
-    relevant = responses.sort_by{ _1[0] }.reverse
-    faq = relevant[0][:faq]
+    responses = responses.sort_by{ _1[0] }.reverse
+    faq = responses[0][:faq]
     if (words.size.to_f/faq.size.to_f*100) > 50.0
       output = "#{faq[:q]}: #{faq[:a]} /#{faq[:id]}"
     else
       output = ""
-      relevant.each do |response|
-        faq = response[1]
+
+      #require 'debug'; binding.break
+      responses.each do |response|
+        faq = response[:faq]
         output += "=> /#{faq[:id]} : #{faq[:q]}\n"
+      end
     end
 
     output
   end
-
 end
