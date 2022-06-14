@@ -34,11 +34,35 @@ class Answer
     return "Sólo tengo #{@faq.size - 1} respuestas!" if index >= @faq.size
 
     faq = @faq[index]
-    output = "#{faq[:q]}: #{faq[:a]} /#{faq[:id]}"
+    output = "/#{faq[:id]} #{faq[:q]}: #{faq[:a]} "
   end
 
   def respond(input)
     words = input.split.map!(&:downcase)
+    responses = filter_responses_with(words)
+    return "No tengo respuesta. ¡Lo siento!" if responses.size.zero?
+
+    faq = responses.first[:faq]
+    score = responses.first[:score]
+    if (score == words.size) # Exact answer
+      output = "#{faq[:q]}: #{faq[:a]} /#{faq[:id]}"
+    else
+      if responses.size > 1
+        output = "Tengo varías posibilidades:\n"
+      else
+        output = "No lo sé! Pero te puedo responder sobre:\n"
+      end
+
+      responses.each do |response|
+        faq = response[:faq]
+        output += "* /#{faq[:id]} => #{faq[:q]}\n"
+      end
+    end
+
+    output
+  end
+
+  def filter_responses_with(words)
     responses = []
     @faq.each do |faq|
       score = 0
@@ -46,29 +70,6 @@ class Answer
       next if score.zero?
       responses <<  { score: score, faq: faq }
     end
-
-    if responses.size.zero?
-      return "No tengo respuesta. ¡Lo siento!"
-    end
-
-    responses = responses.sort_by{ _1[0] }.reverse
-    faq = responses[0][:faq]
-    if (words.size.to_f/faq.size.to_f*100) > 50.0
-      # respuesta clara
-      output = "#{faq[:q]}: #{faq[:a]} /#{faq[:id]}"
-    else
-      if responses.size > 1
-        output = "Tengo varías posibilidades:\n"
-      else
-        output = "No lo sé! Pero te puedo responder a:\n"
-      end
-
-      responses.each do |response|
-        faq = response[:faq]
-        output += "=> /#{faq[:id]} : #{faq[:q]}\n"
-      end
-    end
-
-    output
+    responses.sort_by{ _1[0] }.reverse
   end
 end
